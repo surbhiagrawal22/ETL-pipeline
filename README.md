@@ -1,11 +1,11 @@
 # ETL-pipeline
-ETL pipeline in Python
+                        ** ETL pipeline in Python **
 
-About the dataset
+                        ** About the dataset **
 
 •	The dataset includes a record for each oil pipeline leak or spill reported to the Pipeline and Hazardous Materials Safety Administration since 2010 till 2016. These records include the incident date and time, operator and pipeline, cause of incident, type of hazardous liquid and quantity lost, injuries and fatalities, and associated costs. Dataset has been taken from kaggle and was saved in Postgre database.
 
-Setup of files
+                         ** Setup of files **
 
 •	A credentials.py file is used which stores all the database connection user ID/password, environmental variables for security purpose.
 
@@ -22,7 +22,7 @@ The three files generated and saved are Duplicated_rows.csv, Duplicated_columns.
 
 All the above .py (credentials.py. and SQL_query.py) modules needs to be saved in same folder while running the main file which is ETLExtractTransformLoad.py file.
 
-ETL Pipeline
+                              ** ETL Pipeline **
 
 •	ETLExtractTransformLoad.py contains the code for extracting data from Postgre SQL database. Connection is made to the Postgre Database and dataset is read.
 
@@ -32,12 +32,14 @@ ETL Pipeline
 
 •	Inconsistent values have been replaced and white spaces has been trimmed.
 
-•	The star schema (fact and dimension tables) has been created and all the files are staged in a local database MYSQL Datawarehouse.
+•	The star schema (1 fact table and 7 dimension tables) has been created and all the files are staged in a local database MYSQL Datawarehouse.
 
 
-Solving business Use-case
+                         ** Solving business Use-case **
 
 •	In AccidentsModel.py, the data in form of star schema is first read from the MYSQL database by creating connection and running SQL queries.
+
 •	OLAP question and Machine learning model has been solved in AccidentsModel.py.
+
 •	Decision tree classifier and Random Forest Classifier both has been applied to predict the liquid type which has caused the Oil Spill
-Altough the accuracy with both models are low, but with random forest classifer , accuracy has increased significantly by 10 %
+Altough the accuracy with both models is low, but with random forest classifier , accuracy has increased significantly by 10 % .
